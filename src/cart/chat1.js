@@ -23,125 +23,131 @@ export default function App() {
   const [currentDropDown6, setCurrentDropDown6] = useState(false);
   const [currentDropDown7, setCurrentDropDown7] = useState(false);
   const [currentDropDown8, setCurrentDropDown8] = useState(false);
+  const [openedFaqId, setOpenedFaqId] = useState(9)
 
-  const dropDownText1 = async () => {
-    await dropDownText(1);
-    await setCurrentDropDown1(!currentDropDown1)
-  }
-
-  const dropDownText2 = async () => {
-    await dropDownText(2);
-    await setCurrentDropDown2(!currentDropDown2)
-  }
-
-  const dropDownText3 = async () => {
-    await dropDownText(3);
-    await setCurrentDropDown3(!currentDropDown3)
-  }
-
-  const dropDownText4 = async () => {
-    await dropDownText(4);
-    await setCurrentDropDown4(!currentDropDown4)
-  }
-
-  const dropDownText5 = async () => {
-    await dropDownText(5);
-    await setCurrentDropDown5(!currentDropDown5)
-  }
-
-  const dropDownText6 = async () => {
-    await dropDownText(6);
-    await setCurrentDropDown6(!currentDropDown6)
-  }
-
-  const dropDownText7 = async () => {
-    await dropDownText(7);
-    await setCurrentDropDown7(!currentDropDown7)
-  }
-
-  const dropDownText8 = async () => {
-    await dropDownText(8);
-    await setCurrentDropDown8(!currentDropDown8)
-  }
-
-  const dropDownText = (e) => {
+  const dropDownText = async (e) => {
+    setOpenedFaqId(e)
+    console.log(e)
     switch (e) {
+      case 0:
+        await setCurrentDropDown1(!currentDropDown1);
+        await setCurrentDropDown2(false);
+        await setCurrentDropDown3(false);
+        await setCurrentDropDown4(false);
+        await setCurrentDropDown5(false);
+        await setCurrentDropDown6(false);
+        await setCurrentDropDown7(false);
+        await setCurrentDropDown8(false);
+        break;
       case 1:
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
-        setCurrentDropDown7(false);
-        setCurrentDropDown8(false);
+        await setCurrentDropDown1(false);
+        await setCurrentDropDown2(!currentDropDown2);
+        await setCurrentDropDown3(false);
+        await setCurrentDropDown4(false);
+        await setCurrentDropDown5(false);
+        await setCurrentDropDown6(false);
+        await setCurrentDropDown7(false);
+        await setCurrentDropDown8(false);
         break;
       case 2:
-        setCurrentDropDown1(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
-        setCurrentDropDown7(false);
-        setCurrentDropDown8(false);
+        await setCurrentDropDown1(false);
+        await setCurrentDropDown2(false);
+        await setCurrentDropDown3(!currentDropDown3);
+        await setCurrentDropDown4(false);
+        await setCurrentDropDown5(false);
+        await setCurrentDropDown6(false);
+        await setCurrentDropDown7(false);
+        await setCurrentDropDown8(false);
         break;
       case 3:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
-        setCurrentDropDown7(false);
-        setCurrentDropDown8(false);
+        await setCurrentDropDown1(false);
+        await setCurrentDropDown2(false);
+        await setCurrentDropDown3(false);
+        await setCurrentDropDown4(!currentDropDown4);
+        await setCurrentDropDown5(false);
+        await setCurrentDropDown6(false);
+        await setCurrentDropDown7(false);
+        await setCurrentDropDown8(false);
         break;
       case 4:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
-        setCurrentDropDown7(false);
-        setCurrentDropDown8(false);
+        await setCurrentDropDown1(false);
+        await setCurrentDropDown2(false);
+        await setCurrentDropDown3(false);
+        await setCurrentDropDown4(false);
+        await setCurrentDropDown5(!currentDropDown5);
+        await setCurrentDropDown6(false);
+        await setCurrentDropDown7(false);
+        await setCurrentDropDown8(false);
         break;
       case 5:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown6(false);
-        setCurrentDropDown7(false);
-        setCurrentDropDown8(false);
+        await setCurrentDropDown1(false);
+        await setCurrentDropDown2(false);
+        await setCurrentDropDown3(false);
+        await setCurrentDropDown4(false);
+        await setCurrentDropDown5(false);
+        await setCurrentDropDown6(!currentDropDown6);
+        await setCurrentDropDown7(false);
+        await setCurrentDropDown8(false);
         break;
       case 6:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown7(false);
-        setCurrentDropDown8(false);
+        await setCurrentDropDown1(false);
+        await setCurrentDropDown2(false);
+        await setCurrentDropDown3(false);
+        await setCurrentDropDown4(false);
+        await setCurrentDropDown5(false);
+        await setCurrentDropDown6(false);
+        await setCurrentDropDown7(!currentDropDown7);
+        await setCurrentDropDown8(false);
         break;
       case 7:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
-        setCurrentDropDown8(false);
-        break;
-      case 8:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
-        setCurrentDropDown7(false);
+        await setCurrentDropDown1(false);
+        await setCurrentDropDown2(false);
+        await setCurrentDropDown3(false);
+        await setCurrentDropDown4(false);
+        await setCurrentDropDown5(false);
+        await setCurrentDropDown6(false);
+        await setCurrentDropDown7(false);
+        await setCurrentDropDown8(!currentDropDown8);
         break;
       default:
         break;
     }
   }
+
+  const faqsData = [
+    {
+      total: "How to connect to your costumer support team?",
+      description: "Simply look for the live chat widget in the right bottom side of the website and start a chat in order to connect with one of our agents.",
+    },
+    {
+      total: "Do you offer customized solutions for business?",
+      description: "Yes, we understand that every business is unique. We offer customized solutions tailored to your specific business needs."
+    },
+    {
+      total: "What kind of services do you offer?",
+      description: "We offer various services starting from: 24/7 live chat services, email support services, virtual assistance, phone support services and many more."
+    },
+    {
+      total: "How does 24/7 live chat support work?",
+      description: "Our 24/7 live chat aupport is staffed by a dedicated team of agents who are available around the clock to engage with your customers."
+    },
+    {
+      total: "Can I add the widget chat in multiple websites?",
+      description: "Yes, that would be possible if you have website subdomains in the same industry and they require 24/7 live chat assistance."
+    },
+    {
+      total: "Is the chat widget fully customizable?",
+      description: "Yes it is! When onboarding process starts you will be able to customize colors, follow up messages, avatars and more."
+    },
+    {
+      total: "How to embed the chat widget?",
+      description: "Our team will provide a snippet of code then you will be able to insert that in your website through many different plugins (We suggest WPCode)."
+    },
+    {
+      total: "How long does it take to embed the widget?",
+      description: "The process does not consume time, it is a small work that will require about 5 minutes depending from the platform that your website is built."
+    },
+  ]
 
   useEffect(() => {
     function handleScroll() {
@@ -220,7 +226,6 @@ export default function App() {
           </div>
           {
             !faqState ?
-
               <div className='relative z-[2] -top-16 flex flex-col bg-white w-[345px] h-[500px] p-2 mx-auto rounded-xl'>
                 <div className='w-full justify-center '>
                   <div className='flex flex-row justify-center gap-1 items-center'>
@@ -335,79 +340,26 @@ export default function App() {
               </div>
               :
               <div className='relative z-[2] -top-16 flex flex-col bg-white w-[345px] h-[500px] p-2 mx-auto rounded-xl'>
-                <div className='relative -left-2 w-[340px] h-[500px] px-4 py-8 flex flex-col overflow-y-scroll'>
+                <div className='relative -left-2 w-[340px] h-[500px] px-4 pb-4 flex flex-col overflow-y-scroll'>
                   <div className="relative w-full mx-auto text-black">
-                    <div onClick={() => dropDownText1()} className={`${currentDropDown1 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      How to connect to your costumer support team?
-                    </div>
-                    <div className={`${currentDropDown1 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown1 ? " h-full flex" : "hidden"}`}>
-                        Simply look for the live chat widget in the right bottom side of the website and start a chat in order to connect with one of our agents.
-                      </span>
-                    </div>
 
-                    <div onClick={() => dropDownText2()} className={`${currentDropDown2 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      Do you offer customized solutions for business?
-                    </div>
-                    <div className={`${currentDropDown2 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown2 ? " h-full flex" : "hidden"}`}>
-                        Yes, we understand that every business is unique. We offer customized solutions tailored to your specific business needs.
-                      </span>
-                    </div>
+                    {
+                      faqsData.map((item, index) => {
+                        return (
+                          <div key={index}>
+                            <div onClick={(e) => dropDownText(index)} className={`${index === openedFaqId ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-5 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
+                              {item.total}
+                            </div>
+                            <div className={`${index === openedFaqId ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
+                              <span className={`${index === openedFaqId ? " h-full flex" : "hidden"}`}>
+                                {item.description}
+                              </span>
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
 
-                    <div onClick={() => dropDownText3()} className={`${currentDropDown3 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      What kind of services do you offer?
-                    </div>
-                    <div className={`${currentDropDown3 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown3 ? " h-full flex" : "hidden"}`}>
-                        We offer various services starting from: 24/7 live chat services, email support services, virtual assistance, phone support services and many more.
-                      </span>
-                    </div>
-
-                    <div onClick={() => dropDownText4()} className={`${currentDropDown4 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      How does 24/7 live chat support work?
-                    </div>
-                    <div className={`${currentDropDown4 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown4 ? " h-full flex" : "hidden"}`}>
-                        Our 24/7 live chat aupport is staffed by a dedicated team of agents who are available around the clock to engage with your customers.
-                      </span>
-                    </div>
-
-                    <div onClick={() => dropDownText5()} className={`${currentDropDown5 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      Can I add the widget chat in multiple websites?
-                    </div>
-                    <div className={`${currentDropDown5 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown5 ? " h-full flex" : "hidden"}`}>
-                        Yes, that would be possible if you have website subdomains in the same industry and they require 24/7 live chat assistance.
-                      </span>
-                    </div>
-
-                    <div onClick={() => dropDownText6()} className={`${currentDropDown6 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      Is the chat widget fully customizable?
-                    </div>
-                    <div className={`${currentDropDown6 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown6 ? " h-full flex" : "hidden"}`}>
-                        Yes it is! When onboarding process starts you will be able to customize colors, follow up messages, avatars and more.
-                      </span>
-                    </div>
-
-                    <div onClick={() => dropDownText7()} className={`${currentDropDown7 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      How to embed the chat widget?
-                    </div>
-                    <div className={`${currentDropDown7 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown7 ? " h-full flex" : "hidden"}`}>
-                        Our team will provide a snippet of code then you will be able to insert that in your website through many different plugins (We suggest WPCode).
-                      </span>
-                    </div>
-
-                    <div onClick={() => dropDownText8()} className={`${currentDropDown8 ? "rounded-t-xl border-b-white" : "rounded-xl"} mt-2 cursor-pointer border-[#0334E4] border-[0.5px] p-2 text-start backdrop-filter flex items-center justify-between font-semibold text-base`}>
-                      How long does it take to embed the widget?
-                    </div>
-                    <div className={`${currentDropDown8 ? "py-2 border-[#0334E4] border-t-white border-[0.5px] p-2 rounded-b-lg" : ""} px-1 text-start text-black backdrop-filter duration-300 `}>
-                      <span className={`${currentDropDown8 ? " h-full flex" : "hidden"}`}>
-                        The process does not consume time, it is a small work that will require about 5 minutes depending from the platform that your website is built.
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -426,7 +378,7 @@ export default function App() {
               Powered by
               <span className='font-semibold  cursor-pointer'>
                 <Link
-                  className="text-blue-600 underline decoration-sky-500/30 break-words"
+                  className="text-black underline decoration-sky-500/30 break-words"
                   to="https://appointhelp.com/"
                   target="_blank"
                 >
